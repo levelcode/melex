@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="watachi90">
+
+    <title>Melex</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css">
+    <link href="css/custom.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+
+        <div id="page-wrapper">
+
+
+                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">MELEXA</a>
+                    </div>
+                    
+                    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="nav navbar-nav side-nav">
+                            
+                            <li><a href="#" id="bt_perfil"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a></li>
+                            <li><a href="#" id="bt_pedidos"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Pedidos</a></li>
+                            <li><a href="#" id="bt_cartera"><i class="fa fa-usd" aria-hidden="true"></i> Cartera</a></li>
+                            <li><a href="#" id="bt_ofertas"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Ofertas</a></li>
+
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </nav>
+
+
+
+              
+                <!-- Begin page content -->
+                <div class="container-fluid">
+                    <div class="page-header">
+                        <h1>Login</h1>
+                    </div> 
+                    <div class="row text-center">
+                        <div class="col-xs-4 text-right"><label for="login_user">Usuario</label></div>
+                        <div class="col-xs-4"><input type="text" id="login_user" name="login_user"></div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-xs-4 text-right"><label for="login_user">Contraseña</label></div>
+                        <div class="col-xs-4"><input type="text" id="login_password" name="login_password"></div>
+                    </div>
+                    <div class="row text-center"><button id="bt_login">Ingresar</button></div>
+                </div>
+
+                <div class="container-fluid">
+                    <div class="page-header text-center">
+                        <h1>Clientes</h1>
+                    </div>
+                    <div class="row text-left">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item active"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Cliente 1</a>
+                            <a href="#" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Cliente 2</a>
+                            <a href="#" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Cliente 3</a>
+                            <a href="#" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Cliente 4</a>
+                            <a href="#" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Cliente 5</a>
+                            <a href="#" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Cliente 6</a>
+                            <a href="#" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Cliente 7</a>
+                            <a href="#" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Cliente 8</a>
+                            <a href="#" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Cliente 9</a>
+                            <a href="#" class="list-group-item"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Cliente 10</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid">
+                    <div class="page-header text-center">
+                        <h1>Perfil del Cliente</h1>
+                    </div>
+                    <div class="row">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="nombre" class="col-sm-2 control-label">Nombre</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="nombre" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="codigo" class="col-sm-2 control-label">Código</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="codigo" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion" class="col-sm-2 control-label">Dirección</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="direccion" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono" class="col-sm-2 control-label">Teléfono</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="telefono" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">Email</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="email" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion2" class="col-sm-2 control-label">Dirección oficina</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="direccion2" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion3" class="col-sm-2 control-label">Dirección despacho</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="direccion3" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion4" class="col-sm-2 control-label">Dirección radicación</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="direccion4" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="condicion" class="col-sm-2 control-label">Condición radicación</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="condicion" disabled>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+
+                <div class="container-fluid">
+                    <div class="page-header text-center">
+                        <h1>Mis pedidos</h1>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-4">
+                            <div class='input-group date datetimepicker' id='datetimepicker1'>
+                                <input type='text' class="form-control" placeholder="Desde" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div> 
+                        <div class="form-group col-sm-4">
+                            <div class='input-group date datetimepicker' id='datetimepicker2'>
+                                <input type='text' class="form-control" placeholder="Hasta" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-default">Consultar</button>               
+                    </div>
+                    <div class="row">
+                        <div class="radio col-sm-3">
+                            <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                            Última semana
+                            </label>
+                        </div>
+                        <div class="radio col-sm-3">
+                            <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                            Último mes
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <table class="table table-bordered"> 
+                            <thead> 
+                                <tr> 
+                                    <th>OC</th> 
+                                    <th># Pedido</th> 
+                                    <th>Referencia</th> 
+                                    <th>Cant. Pedida</th>
+                                    <th>Cant. Enviada</th>
+                                    <th>Factura</th>
+                                    <th>Fecha Factura</th>
+                                </tr> 
+                            </thead> 
+                            <tbody> 
+                                <tr> 
+                                    <td>xxxx</td> 
+                                    <td>xxxx</td>
+                                    <td>xxxx</td>
+                                    <td>xxxx</td> 
+                                    <td>xxxx</td> 
+                                    <td>xxxx</td> 
+                                    <td>xxxx</td> 
+                                </tr> 
+                            </tbody> 
+                        </table>
+                    </div>
+                </div>
+
+                <div class="container-fluid">
+                    <div class="page-header text-center">
+                        <h1>Cartera del cliente</h1>
+                    </div>
+                    <div class="row">
+                        <ul class="saldo">
+                            <li><span>Saldo</span>1.234.956</li>
+                            <li><span>Cartera vencida</span>1.234.956</li>
+                            <li><span>Divisa</span>COP</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <table class="table table-bordered"> 
+                            <thead> 
+                                <tr> 
+                                    <th>Factura</th> 
+                                    <th>Emisión</th> 
+                                    <th>Vencimiento</th> 
+                                    <th>Días vto</th>
+                                    <th>OC</th>
+                                    <th>Moneda</th>
+                                    <th>Importe</th>
+                                    <th>Saldo(ML)</th>
+                                </tr> 
+                            </thead> 
+                            <tbody> 
+                                <tr> 
+                                    <td>xxxx</td> 
+                                    <td>xxxx</td>
+                                    <td>xxxx</td>
+                                    <td>xxxx</td> 
+                                    <td>xxxx</td> 
+                                    <td>xxxx</td> 
+                                    <td>xxxx</td> 
+                                    <td>xxxx</td> 
+                                </tr> 
+                            </tbody> 
+                        </table>
+                    </div>
+                </div>
+
+
+                <div class="container-fluid">
+                    <div class="page-header text-center">
+                        <h1>Ofertas</h1>
+                    </div>
+                    <div class="row">
+                            <ul class="saldo">
+                                <li><span>Saldo</span>1.234.956</li>
+                                <li><span>Cartera vencida</span>1.234.956</li>
+                                <li><span>Divisa</span>COP</li>
+                            </ul>
+                    </div>
+                    <div class="row">                       
+                            <table class="table table-bordered" role="form"> 
+                                <thead> 
+                                    <tr> 
+                                        <th>Factura</th> 
+                                        <th>Emisión</th> 
+                                        <th>Vencimiento</th> 
+                                        <th>Días vto</th>
+                                        <th>OC</th>
+                                        <th>Moneda</th>
+                                        <th>Importe</th>
+                                        <th>Saldo(ML)</th>
+                                    </tr> 
+                                </thead> 
+                                <tbody> 
+                                    <tr> 
+                                        <td>xxxx</td> 
+                                        <td>xxxx</td>
+                                        <td>xxxx</td>
+                                        <td>xxxx</td> 
+                                        <td>xxxx</td> 
+                                        <td>xxxx</td> 
+                                        <td>xxxx</td> 
+                                        <td>xxxx</td> 
+                                    </tr> 
+                                </tbody> 
+                            </table>
+                    </div>
+                </div>
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/bootstrap-datetimepicker.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
