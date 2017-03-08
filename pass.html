@@ -30,9 +30,9 @@
 </head>
 
 <body>
-    <div id="loading">  <img src="img/loading.gif" alt="">  </div>
 
     <div id="wrapper">
+
 
         <div id="page-wrapper">
 
@@ -44,15 +44,27 @@
                         <h1>MELEXA</h1>
                     </div> 
                     <div class="row text-center">
-                        <div class="col-xs-4 text-right"><label for="login_user">Usuario</label></div>
-                        <div class="col-xs-4"><input type="text" id="login_user" name="login_user"></div>
+                        <div class="col-xs-8 text-left">
+                            <label for="new_pass">Nueva Clave:</label>
+                        </div>
+                        <div class="col-xs-12">
+                            <input type="password" id="new_pass" name="new_pass">
+                        </div>
                     </div>
                     <div class="row text-center">
-                        <div class="col-xs-4 text-right"><label for="login_password">Contraseña</label></div>
-                        <div class="col-xs-4"><input type="password" id="login_password" name="login_password"></div>
+                        <div class="col-xs-8 text-left">
+                            <label for="confirm_pass">Confirmar Clave:</label>
+                        </div>
+                        <div class="col-xs-12">
+                            <input type="password" id="confirm_pass" name="confirm_pass">
+                        </div>
                     </div>
-                    <div class="row text-center"><button id="bt_login">Ingresar</button></div>
-                    <div class="row text-left"><small class="msg_process" id="msg_info"></small></div>
+                    <div class="row text-center">
+                        <button id="bt_continue">Continuar</button>
+                    </div>
+                    <div class="row text-left">
+                        <small class="msg_process" id="msg_info"></small>
+                    </div>
                 </div>
 
                 
@@ -71,7 +83,9 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/moment.min.js"></script>
     <script src="js/bootstrap-datetimepicker.js"></script>
-    <script src="js/login.js"></script>
+    <script src="js/helper.js"></script>
+    <script src="js/pages.js"></script>
+    <script src="js/pass-manager.js"></script>
 
 </body>
 

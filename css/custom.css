@@ -6,7 +6,10 @@ body {
   height: 100%;
   /* The html and body elements cannot have any padding or margin. */
 }
-
+button{
+  padding:1em 0.8em;
+  border-bottom: #c0c142 solid 0.5em;
+}
 /* Wrapper for page content to push down footer */
 #wrap {
   min-height: 100%;
@@ -26,6 +29,7 @@ body {
 #wrapper{
   margin-bottom: 50px;
   position: relative;
+  display:none;
 }
 
 /* Custom page CSS
@@ -46,10 +50,12 @@ body {
  	float:none;
     width:100%;
     padding:10px;
+    border-bottom: solid 3px #c0c142;
 }
 .navbar-brand {
     font-size:20pt;
     float:none;
+    line-height: 45px;
 }
 #bottomNav {
 	padding:10px;
@@ -68,6 +74,19 @@ body {
 #bottomNav a:hover {
     color:#fff;
 }
+.navbar-inverse .navbar-collapse,.navbar-inverse{
+  border-bottom: solid 1px #c0c142;
+}
+
+
+#headingname{
+  margin-top: 12px;
+  font-size: 0.8em;
+  color: #757525;
+  border-bottom: solid 1px #c0c142;
+  text-align: right;
+}
+
 
 .row{
 	margin-bottom: 1em;
@@ -101,12 +120,73 @@ body {
 }
 
 .container-fluid{
-  display:none;
+  /*display:none;*/
   padding-top: 25px;
   padding-left: 25px;
   padding-right: 25px;
 }
 
 .navbar-toggle{
+  /*display: none;*/
+}
+.msg_process{
+  color: red;
+  font-size: 0.8em;
+}
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover{
+  background: #757525;
+  border-color: darkgray;
+}
+.bt_in_proccess{
+  border-bottom-color: gray !important;
+}
+
+
+#loading{
+    text-align: center;
+    padding: 50px;
+}
+
+
+.pag_bt{
+    padding-top: 0.2em !important;
+    height: 2.5em !important;
+}
+
+.cliente input{
+  width: 100% !important;
+}
+
+table{
+  border-spacing: 10px;
+  border-collapse: separate;
+  background: white;
+  text-align: center;
+}
+
+th{
+  font-size: 0.7em;
+  background: lightgray;
+  padding: 6px 6px;
+}
+
+.page-data{
+  height: 35px;
+}
+.page-data span{
+  margin: 0 auto;
+}
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.filtros{
+  margin-bottom: 1em;
+  border-bottom: solid 1px #c0c142;
   display: none;
+}
+.input-group{
+  margin-bottom: 1em;
 }
