@@ -1,5 +1,6 @@
 var state = 0;
 var urlA="http://localhost:8080/melexa/api/api.php";
+//var urlA="http://melexa.info/app_melexa/api/api.php";
 function setState(i,msg){
     state = i;
     $("#msg_info").text(msg);

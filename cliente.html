@@ -55,7 +55,7 @@
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="nav navbar-nav side-nav" id="menu">
                             <li><a href="index.html" id="bt_salir"><i class="fa fa-sign-out" aria-hidden="true"></i> Salir</a></li>
-                            <li><a href="#" id="bt_cuenta"><i class="fa fa-user" aria-hidden="true"></i> Cuenta</a></li>
+                            <!-- <li><a href="#" id="bt_cuenta"><i class="fa fa-user" aria-hidden="true"></i> Cuenta</a></li> -->
                             <li><a href="#" id="bt_clientes"><i class="fa fa-users" aria-hidden="true"></i> Clientes</a></li>
                             
                         </ul>
@@ -65,11 +65,13 @@
 
                 <!-- Begin page content -->
                 <div class="container-fluid cliente">
-                    <div id="headingname">Bienvenido: <span></span></div>
+                    <div class="headingname" >Usuario: <span id="headinguname"></span></div>
                     <div class="page-header text-center">
-                        <h1>Clientes</h1>
+                        <h1>Cliente</h1>
                     </div>
-                    
+                    <div class="row text-left">
+                        <h2>Perfil del Cliente</h2>
+                    </div>
                     <div class="row text-left" style="margin: 0.5em 0.5em;">
                         <div class="sm-6"><label for="">NOMBRE</label></div>
                         <div class="sm-6"><input id="cnombre" type="text" disabled></div>    
@@ -98,7 +100,14 @@
                         <div class="sm-6"><label for="">TELEFONO 2</label></div>
                         <div class="sm-6"><input id="ctelefono2" type="text" disabled></div>    
                     </div>
-                    
+                    <div class="row text-left">
+                        <h2>Tablas Relacionadas</h2>
+                    </div>
+                    <div class="row text-left">
+                        <ul id="tablas_links">
+                            
+                        </ul>
+                    </div>
                 </div>
 
                 

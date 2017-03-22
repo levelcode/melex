@@ -1,4 +1,5 @@
 var u_id,u_name,token;
+
 var total_clients=0;
 var page = 0;
 function valid(par){
@@ -12,22 +13,26 @@ function valid(par){
 }
 
 function loadMenu(){
+	if(idclient == 0){
+		state = 0;
+	    loadContent();
+	}else{
+		$.post( urlA,{action:"get_available_tables"}, function( data ) {
+	        if(data.msg == "error"){
+	            alert("Error de conexión.");
+	        }else{
+	        	for(i=0 ; i< data.length ; i++){
+	        		m_tid=data[i].id;
+	        		m_tn=data[i].name;
+	        		m_tp=data[i].publico;
+	        		$("#menu").append("<li><a href='pages.html?t="+token+"&uid="+u_id+"&uname="+u_name+"&tid="+m_tid+"'><i class='fa fa-table'></i> "+m_tp+"</a></li>");
+	        	}
+	           	state = 0;
+	           	loadContent();
+	        }
 
-	$.post( urlA,{action:"get_available_tables"}, function( data ) {
-        if(data.msg == "error"){
-            alert("Error de conexión.");
-        }else{
-        	for(i=0 ; i< data.length ; i++){
-        		m_tid=data[i].id;
-        		m_tn=data[i].name;
-        		m_tp=data[i].publico;
-        		$("#menu").append("<li><a href='pages.html?t="+token+"&uid="+u_id+"&uname="+u_name+"&tid="+m_tid+"'><i class='fa fa-table'></i> "+m_tp+"</a></li>");
-        	}
-           	state = 0;
-           	loadContent();
-        }
-
-    },"json");
+	    },"json");
+	}
 
 }
 //clients_table
@@ -46,7 +51,8 @@ function loadContent(){
 					for(i=0;i<lista.length;i++){
 						c_id=lista[i].cliente;
 						c_name=lista[i].nombre1+" "+lista[i].nombre2;
-						$("#clients_table").append("<a href='cliente.html?t="+token+"&uid="+u_id+"&uname="+u_name+"&cid="+c_id+"' class='list-group-item'><span class='glyphicon glyphicon-chevron-right'></span> "+c_name+"</a>");
+						//$("#clients_table").append("<a href='cliente.html?t="+token+"&uid="+u_id+"&uname="+u_name+"&cid="+c_id+"' class='list-group-item'><span class='glyphicon glyphicon-chevron-right'></span> "+c_name+"</a>");
+						$("#clients_table").append("<a href='cliente.html?t="+token+"&uid="+u_id+"&uname="+u_name+"&cid="+c_id+"' class='list-group-item'>"+c_id+" - "+c_name+"</a>");
 					}			
 					if( (page+1)*50>total_clients){
 						$(".next_clients").hide();		
@@ -81,7 +87,7 @@ $(document).ready(function() {
 			page = params.parameters.page;
 		state = 1;
 
-		$("#headingname").text(u_name);
+		$("#headinguname").text(u_name);
 		loadMenu();
 	}
 
@@ -96,10 +102,79 @@ $(document).ready(function() {
 	});
 
 	$("#bt_cuenta").click(function(){
-		window.location.replace("cuenta.html?t="+token+"&uid="+u_id+"&uname="+u_name+"&page=0");
+		window.location.replace("pass.html?t="+token+"&uid="+u_id+"&uname="+u_name+"&page=0");
 	});
 	$("#bt_clientes").click(function(){
 		window.location.replace("main.html?t="+token+"&uid="+u_id+"&uname="+u_name+"&page=0");
 	});
+
+
+	//autocomplete
+	$("#s_client").autocomplete({
+		source: function(request,response){
+			$.post(urlA,{action:"autocomplete_clients",iduser:u_id,query:request.term},function(d){
+				response(d);
+			},"json");
+		},minLength:3
+	});
+
+	$("#bt_search").click(function(){
+		var term = $("#s_client").val();
+		if( term.length>0){
+			$("#loading").show();
+    		$("#wrapper").hide();
+    		$("#s_clientid").val("");
+			$.post(urlA,{action:"search_clients_by_name",iduser:u_id,query:term},function(d){
+				if(d.msg=="error"){
+					alert("No hay resultados");
+				}else{
+					$("#clients_table").html("");
+					for(i=0;i<d.length;i++){
+						c_id=d[i].cliente;
+						c_name=d[i].nombre1+" "+d[i].nombre2;
+						//$("#clients_table").append("<a href='cliente.html?t="+token+"&uid="+u_id+"&uname="+u_name+"&cid="+c_id+"' class='list-group-item'><span class='glyphicon glyphicon-chevron-right'></span> "+c_name+"</a>");
+						$("#clients_table").append("<a href='cliente.html?t="+token+"&uid="+u_id+"&uname="+u_name+"&cid="+c_id+"' class='list-group-item'>"+c_id+" - "+c_name+"</a>");
+					}			
+
+					$(".next_clients").hide();		
+					$(".prev_clients").hide();
+					$(".page-data").text(	"0/0"	 );
+				}
+				$("#loading").hide();
+    			$("#wrapper").show();
+			},"json");
+		}
+	});
+
+
+	$("#bt_search_idclient").click(function(){
+		var term = $("#s_clientid").val();
+		if( term.length>0){
+			$("#loading").show();
+    		$("#wrapper").hide();
+    		$("#s_client").val("");
+			$.post(urlA,{action:"search_clients_by_id",iduser:u_id,query:term},function(d){
+				if(d.msg=="error"){
+					alert("No hay resultados");
+				}else{
+					$("#clients_table").html("");
+					for(i=0;i<d.length;i++){
+						c_id=d[i].cliente;
+						c_name=d[i].nombre1+" "+d[i].nombre2;
+						//$("#clients_table").append("<a href='cliente.html?t="+token+"&uid="+u_id+"&uname="+u_name+"&cid="+c_id+"' class='list-group-item'><span class='glyphicon glyphicon-chevron-right'></span> "+c_name+"</a>");
+						$("#clients_table").append("<a href='cliente.html?t="+token+"&uid="+u_id+"&uname="+u_name+"&cid="+c_id+"' class='list-group-item'>"+c_id+" - "+c_name+"</a>");
+					}			
+
+					$(".next_clients").hide();		
+					$(".prev_clients").hide();
+					$(".page-data").text(	"0/0"	 );
+				}
+				$("#loading").hide();
+    			$("#wrapper").show();
+			},"json");
+		}
+	});
+
+
 
 });

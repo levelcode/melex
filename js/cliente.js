@@ -1,5 +1,5 @@
-var u_id,u_name,token;
-var id_client=0;
+var u_id,u_name,token,c_name;
+var c_id=0;
 function valid(par){
 	if(par.t == undefined || par.uid == undefined )
 		return false;
@@ -20,20 +20,21 @@ function loadMenu(){
         		m_tid=data[i].id;
         		m_tn=data[i].name;
         		m_tp=data[i].publico;
-        		$("#menu").append("<li><a href='pages.html?t="+token+"&uid="+u_id+"&uname="+u_name+"&tid="+m_tid+"'><i class='fa fa-table'></i> "+m_tp+"</a></li>");
+        		$("#menu").append("<li><a href='pages.html?t="+token+"&uid="+u_id+"&cid="+c_id+"&cname="+c_name+"&uname="+u_name+"&tid="+m_tid+"'><i class='fa fa-table'></i> "+m_tp+"</a></li>");
+        		$("#tablas_links").append("<li><a href='pages.html?t="+token+"&uid="+u_id+"&cid="+c_id+"&cname="+c_name+"&uname="+u_name+"&tid="+m_tid+"'><i class='fa fa-table'></i> "+m_tp+"</a></li>");
         	}
            	state = 0;
-           	loadContent();
+           	$("#loading").hide();
+			$("#wrapper").show();
         }
 
     },"json");
-
 }
 //clients_table
 //<a href='#' class='list-group-item'><span class='glyphicon glyphicon-chevron-right'></span> Cliente 1</a>
 function loadContent(){
 	
-	$.post(urlA,{action:"get_clients_by_params",cid:id_client},function(d){
+	$.post(urlA,{action:"get_clients_by_params",cid:c_id},function(d){
 		if(d.msg == "error"){
 			alert("Error de conexión.");
 		}else{
@@ -55,10 +56,9 @@ function loadContent(){
 				$("#ctelefono1").val(c_telefono1);
 				$("#ctelefono2").val(c_telefono2);
 			}	
-			$("#loading").hide();
-			$("#wrapper").show();
+			
 		}
-		
+		loadMenu();
 	});
 }
 function load_by_page(){
@@ -76,13 +76,13 @@ $(document).ready(function() {
 		u_id=params.parameters.uid;
 		u_name=params.parameters.uname;
 		token = params.parameters.t;
-		id_client = params.parameters.cid;
+		c_id = params.parameters.cid;
 		if(params.parameters.page!= undefined)
 			page = params.parameters.page;
 		state = 1;
 
-		$("#headingname").text(u_name);
-		loadMenu();
+		$("#headinguname").text(u_name);
+		loadContent()
 	}
 	$("#bt_cuenta").click(function(){
 		window.location.replace("cuenta.html?t="+token+"&uid="+u_id+"&uname="+u_name+"&page=0");

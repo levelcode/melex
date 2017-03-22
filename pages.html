@@ -64,21 +64,21 @@
                 </nav>
 
                 <!-- Begin page content -->
-                <div class="container-fluid">
-                    <div id="headingname">Bienvenido: <span></span></div>
+                <div class="container-fluid" id="container_data">
+                    <!-- <div class="headingname" >Usuario: <span id="headinguname"></span></div> -->
+                    
                     <div class="page-header text-center">
                         <h1></h1>
                     </div>
                     <div class="filtros">
                         <div class="row">
-                            <div class="col-xs-3"><label for="filter">Filtrar por:</label></div>
+                            <div class="col-md-3"><label for="filter">Filtrar por:</label></div>
                             <div class="col-md-3">
-                            <select class="input-group form-control" name="filter" id="filter" >
+                            <select class="form-control" name="filter" id="filter" >
                                 <!-- <option value="columna">columna</option> -->
                             </select>
                             </div>
-                        </div>
-                        <div class="row">
+
                             <div class="col-md-3">
                                 <div class='input-group date datetimepicker' id='dpick1'>
                                     <input type='text' class="form-control" placeholder="Desde" />
@@ -99,14 +99,21 @@
                         </div>
                     </div>
 
-                    <div class="col-md-12" style="min-height: 3em; vertical-align: top;">
+                    
+                    <div class="headingclient col-md-12" >Datos del Cliente: <span id="headingcname"></span></div>
+
+
+
+                    <!-- <div class="col-md-12" style="min-height: 3em; vertical-align: top;">
                         <div class="col-xs-4"><button class="pag_bt prev_page btn btn-default"><i class="fa fa-long-arrow-left"></i> Anterior</button></div>
                         <div class="col-xs-4 text-center"><div class="page-data vertical-center"><span></span></div></div>
                         <div class="col-xs-4 text-right">
                             <button class="pag_bt next_page btn btn-default">Siguiente <i class="fa fa-long-arrow-right"></i></button>
                         </div>     
-                    </div>
+                    </div> -->
+
                     
+
                     <div class="row text-left" style="margin: 1em 0em;">
                         <div class="list-group" id="fields_table">
                             <table>
@@ -116,7 +123,7 @@
                             </table>
                         </div>
                     </div>
-                    <div class="col-md-12" style="min-height: 3em; margin-bottom: 1em;">
+                    <div class="col-md-6" style="min-height: 3em; margin:0 auto; margin-bottom: 1.2em;">
                         <div class="col-xs-4"><button class="pag_bt prev_page btn btn-default"><i class="fa fa-long-arrow-left"></i> Anterior</button></div>
                         <div class="col-xs-4 text-center"><div class="page-data vertical-center"><span></span></div></div>
                         <div class="col-xs-4 text-right">

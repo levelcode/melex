@@ -1,14 +1,21 @@
 /* Sticky footer styles
 -------------------------------------------------- */
+a{
+  color:#757525; 
+}
 
 html,
 body {
   height: 100%;
+  font-size: 0.9em;
   /* The html and body elements cannot have any padding or margin. */
 }
 button{
   padding:1em 0.8em;
   border-bottom: #c0c142 solid 0.5em;
+}
+table{
+  font-size: 0.8em;
 }
 /* Wrapper for page content to push down footer */
 #wrap {
@@ -79,13 +86,6 @@ button{
 }
 
 
-#headingname{
-  margin-top: 12px;
-  font-size: 0.8em;
-  color: #757525;
-  border-bottom: solid 1px #c0c142;
-  text-align: right;
-}
 
 
 .row{
@@ -166,9 +166,12 @@ table{
 }
 
 th{
-  font-size: 0.7em;
+  font-size: 0.8em;
   background: lightgray;
   padding: 6px 6px;
+  text-transform: uppercase;
+  text-align: center;
+
 }
 
 .page-data{
@@ -187,6 +190,49 @@ th{
   border-bottom: solid 1px #c0c142;
   display: none;
 }
+.filtros select{
+  margin-bottom: 0.9em;
+}
 .input-group{
   margin-bottom: 1em;
+}
+
+.ui-menu{
+  background: white;
+  padding:0.5em;
+}
+
+#s_client,#s_client_w {
+  width: 100%;
+  min-width: 320px;
+}
+#s_client_d{
+  min-width: 320px;
+}
+
+#tablas_links{
+  list-style: none;
+  text-decoration: underline;
+}
+#tablas_links li{
+  margin-bottom: 1em;
+}
+#tablas_links i{
+  margin-right: 1em;
+}
+
+.headingname{
+  margin-top: 12px;
+  font-size: 0.8em;
+  color: #757525;
+  border-bottom: solid 1px #c0c142;
+  text-align: left;
+  width: 52%;
+  margin-left:12px;
+}
+.headingclient{
+  font-weight: bold;
+  color: #757525;
+  font-size: 0.8em;
+  margin-bottom: 0.6em;
 }
