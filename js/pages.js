@@ -174,6 +174,7 @@ function loadContent(){
 	}
 }
 function load_by_page(){
+	localStorage.setItem("page",page);
 	window.location.replace("pages.html");
 }
 function filter(){
@@ -220,11 +221,37 @@ $(document).ready(function() {
 		}
 
 
-
-
 		$("#back_bt").hide();
 		if(localStorage.getItem("back_h") != undefined  ){
-			
+			var dh=localStorage.getItem("back_h");
+			back_h = JSON.parse(localStorage.getItem("back_h") );
+			if(localStorage.getItem("back_tag") != undefined) {
+				if(localStorage.getItem("back_tag") == "true" && back_h.length>0){
+					localStorage.setItem("back_tag","false");
+					if( back_h[back_h.length-1].cid != undefined)
+						c_id=back_h[back_h.length-1].cid;
+
+					if( back_h[back_h.length-1].tid != undefined)
+						tid=back_h[back_h.length-1].tid;
+
+					if( back_h[back_h.length-1].page != undefined)
+						page=back_h[back_h.length-1].page;
+					
+					//back_h.pop();
+				}else{
+					back_h.push({url:window.location.href,page:page,cid:c_id,tid:tid});
+				}
+			}else{
+				back_h.push({url:window.location.href,page:page,cid:c_id,tid:tid});
+			}
+			if(back_h.length < 2){
+				$("#back_bt").hide();
+			}else{
+				$("#back_bt").show();
+				console.log("showing bt");
+			}
+			console.log(back_h);
+			localStorage.setItem("back_h",JSON.stringify(back_h) );
 		}
 
 
@@ -260,13 +287,11 @@ $(document).ready(function() {
 
 		$(".next_page").click(function(){
 			page++;
-			localStorage.setItem("page", page);
 			load_by_page();
 		});
 
 		$(".prev_page").click(function(){
 			page--;
-			localStorage.setItem("page", page);
 			load_by_page();
 		});	
 
@@ -290,9 +315,11 @@ $(document).ready(function() {
 	       	localStorage.setItem("uid", "");
 	        localStorage.setItem("uname", "");
 		});
-		$(".navbar-back").click(function(){
-			localStorage.setItem("page", last_page);
-			window.location.replace(last_post);
+		$("#back_bt").click(function(){
+			localStorage.setItem("back_tag","true");
+			back_h.pop();
+			localStorage.setItem("back_h",JSON.stringify(back_h) );
+			window.location.replace(back_h[back_h.length-1].url);
 		});
 
 		$("#headingcname").click(function(){

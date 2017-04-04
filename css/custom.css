@@ -268,3 +268,9 @@ th{
   width: 25px;
   height: 25px;
 }
+
+#page_c_h{
+  cursor: pointer;
+  border-left: solid 1px;
+  padding: 12px;
+}
