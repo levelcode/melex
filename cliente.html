@@ -41,21 +41,23 @@
                 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
+                        <button id="back_bt" type="button" class="navbar-back"><i class="fa fa-chevron-left"></i></button>
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.html">MELEXA</a>
-
+                        <div class="navbar-brand">
+                            <a  href="index.html">MELEXA</a>
+                        </div>
                     </div>
                     
                     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="nav navbar-nav side-nav" id="menu">
                             <li><a href="index.html" id="bt_salir"><i class="fa fa-sign-out" aria-hidden="true"></i> Salir</a></li>
-                            <!-- <li><a href="#" id="bt_cuenta"><i class="fa fa-user" aria-hidden="true"></i> Cuenta</a></li> -->
+                            <li><a href="#" id="bt_cuenta"><i class="fa fa-user" aria-hidden="true"></i> Cuenta</a></li>
                             <li><a href="#" id="bt_clientes"><i class="fa fa-users" aria-hidden="true"></i> Clientes</a></li>
                             
                         </ul>
@@ -66,9 +68,9 @@
                 <!-- Begin page content -->
                 <div class="container-fluid cliente">
                     <div class="headingname" >Usuario: <span id="headinguname"></span></div>
-                    <div class="page-header text-center">
+                    <!-- <div class="page-header text-center">
                         <h1>Cliente</h1>
-                    </div>
+                    </div> -->
                     <div class="row text-left">
                         <h2>Perfil del Cliente</h2>
                     </div>
@@ -99,6 +101,18 @@
                     <div class="row text-left" style="margin: 0.5em 0.5em;">
                         <div class="sm-6"><label for="">TELEFONO 2</label></div>
                         <div class="sm-6"><input id="ctelefono2" type="text" disabled></div>    
+                    </div>
+                    <div class="row text-left">
+                        <h2>Sistema Experto</h2>
+                    </div>
+                    <div class="row text-left" style="margin: 1em 0em;">
+                        <div class="list-group" id="fields_table">
+                            <table>
+                                <tbody id="tbody">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <div class="row text-left">
                         <h2>Tablas Relacionadas</h2>

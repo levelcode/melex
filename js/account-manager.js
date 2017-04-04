@@ -26,7 +26,23 @@ function loadMenu(){
 
     },"json");
 }
+function loadContent(){
+	$.post( urlA,{action:"get_available_tables"}, function( data ) {
+        if(data.msg == "error"){
+            alert("Error de conexión.");
+        }else{
+        	for(i=0 ; i< data.length ; i++){
+        		m_tid=data[i].id;
+        		m_tn=data[i].name;
+        		m_tp=data[i].publico;
+        		$("#menu").append("<li><a href='pages.html?t="+token+"&uid="+u_id+"&uname="+u_name+"&tid="+m_tid+"'><i class='fa fa-table'></i> "+m_tp+"</a></li>");
+        	}
+        	state = 0;
+        	$("#wrapper").show();
+        }
 
+    },"json");
+}
 $(document).ready(function() {
 
 	$("#wrapper").hide();
@@ -37,13 +53,14 @@ $(document).ready(function() {
 
 	if( !validateLS(token,u_id,u_name) ){
 		window.location.replace("index.html");
-	else{
+	}else{
 		
-		//state =1;
+		state =1;
 		state = 0;
-        $("#wrapper").show();
-		//loadMenu();
-		
+
+		$("#headinguname").text(u_name);
+	    //loadContent();
+		$("#wrapper").show();
 	}
 
 	$("#bt_continue").click(function(){
@@ -70,5 +87,16 @@ $(document).ready(function() {
                 },"json");
 			}
 		}
+	});
+
+	$("#bt_clientes").click(function(){
+		sessionStorage.setItem("page",0);
+		window.location.replace("main.html");
+	});
+
+	$("#bt_salir").click(function(){
+		localStorage.setItem("t", "");
+       	localStorage.setItem("uid", "");
+        localStorage.setItem("uname", "");
 	});
 });

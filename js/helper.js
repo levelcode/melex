@@ -47,13 +47,13 @@ function urlObject(options) {
                 val = get_param[1];
             }
 
-            if (options.convert_num) {
+            /*if (options.convert_num) {
                 if (val.match(/^\d+$/)) {
                     val = parseInt(val, 10);
                 } else if (val.match(/^\d+\.\d+$/)) {
                     val = parseFloat(val);
                 }
-            }
+            }*/
 
             if (url_get_params[key] === undefined) {
                 url_get_params[key] = val;
@@ -84,14 +84,18 @@ function urlObject(options) {
 
 
 var state = 0;
-var urlA="http://localhost:8080/melexa/api/api.php";
+//var urlA="http://localhost:8080/melexa/api/api.php";
 var idclient= 0;
-//var urlA="http://melexa.info/app_melexa/api/api.php";
+var urlA="http://melexa.info/app_melexa/api/api.php";
 function setState(i,msg){
     state = i;
     $("#msg_info").text(msg);
 }
 
-
-
-
+function validateLS(a,b,c){
+    if(a == undefined || b == undefined || c == undefined )
+        return false;
+    if(a == "" || b == "" || c == "" )
+        return false;
+    return true;
+}
