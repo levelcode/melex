@@ -53,31 +53,51 @@
     </style>
 </head>
 <body>
-    <div id="wrapper">
+    <div id="wrapper" class="wrapper-login">
       <div id="page-wrapper">
         
-        <div class="container-fluid">
+        <div class="container-fluid text-center" class="container-login">
           <div class="row">
+            <div class="col-lg-12">
+              <img class="logo" src="img/logo.jpg" alt="">
+            </div>
             <div class="col-lg-12">
               <h1>Dashboard Melexa</h1>
               <ol class="breadcrumb">
-                <li><i class="fa fa-dashboard"></i> Login </li>
+                <li><i class="fa fa-dashboard"></i> Bienvenido al administrador del Melexa Sales APP.<br> Ingrese su usuario y su contraseña a continuación.</li>
               </ol>
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-6">
-              <form action="<?= htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
-                <div class="form-group">
-                  <label class="col-md-4" for="login_user">Usuario</label>
-                  <input class=" form_control" id="login_user" name="login_user" type="text" required>
-                  <hr>
+            <div class="col-lg-12">
+
+
+
+            <form action="<?= htmlentities($_SERVER['PHP_SELF']); ?>" method="post" role="form">
+
+                  <div class="form-group input-group">
+                      <span class="input-group-addon">Usuario</span>
+                      <input type="text" class="form-control" name="login_user" placeholder="Ingrese su usuario">
+                  </div>
+                  <div class="form-group input-group">
+                      <span class="input-group-addon">Contraseña</span>
+                      <input type="password" class="form-control" name="login_password" placeholder="Ingrese su contraseña">
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">Ingresar</button>
+              </form>
+
+              <?php/* 
+              <form action="<?= htmlentities($_SERVER['PHP_SELF']); ?>" method="post" role="form">
+                <div class="form-group input-group">
+                  <span class="input-group-addon">Usuario</span>
+                  <input class="form_control" id="login_user" name="login_user" type="text" required>
                 </div>
-                <div class="form-group">
-                  <label class="col-md-4" for="login_password">Contraseña</label>
-                  <input class=" form_control" id="login_password" name="login_password" type="password" required>
-                  <hr>
+                <div class="form-group input-group">
+                  <span class="input-group-addon">Contraseña</span>
+                  <input class="form_control" id="login_password" name="login_password" type="password" required>
                 </div>
+                
                 <!-- <div class="form-group">
                   <p class="form-control-static">
                     <a href="recordar.php">Recordar Contraseña</a>
@@ -88,6 +108,7 @@
                 </div>
                 
               </form>
+              */?>
               <form role="form">
                 <div class="form-group has-error" style="margin-top: 2em;">
                     <label id="inputError" class="control-label" for="inputError"><?= $msg ?></label>

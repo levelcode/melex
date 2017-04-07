@@ -50,7 +50,8 @@
                             <span class="icon-bar"></span>
                         </button>
                         <div class="navbar-brand">
-                            <a  href="index.html">MELEXA</a>
+                            <div class="headingname" >Usuario: <span id="headinguname"></span></div>
+                            <a  href="index.html"><img class="logo-nav xs-hidden" src="img/logo.jpg" alt=""></a>
                         </div>
                     </div>
                     
@@ -68,7 +69,6 @@
 
                 <!-- Begin page content -->
                 <div class="container-fluid">
-                    <div class="headingname" >Usuario: <span id="headinguname"></span></div> 
                     
                     <div class="page-header text-center">
                         <h1>Clientes</h1>
@@ -77,6 +77,14 @@
 
                     <!-- id CLient search -->
                     <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group input-group">
+                                <input type="text" class="form-control" id="s_clientid" placeholder="ID de cliente.">
+                                <span class="input-group-btn"><button class="btn btn-default" type="button" id="bt_search_idclient"><i class="fa fa-search"></i> Consultar</button></span>
+                            </div>
+                        </div>
+
+                        <!--
                         <div class="col-xs-6" id="s_client_id">
                             <div class='input-group' id='s_client_id'>
                                 <input id="s_clientid" type='text' class="form-control" placeholder="id de cliente." />
@@ -87,10 +95,18 @@
                                 <i class="fa fa-search"></i> Consultar
                             </button> 
                         </div>
+                        -->
                     </div>
 
                     <!-- Autocomplete search -->
                     <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group input-group">
+                                <input type="text" class="form-control" id="s_client" placeholder="Nombre de cliente.">
+                                <span class="input-group-btn"><button class="btn btn-default" type="button" id="bt_search"><i class="fa fa-search"></i> Consultar</button></span>
+                            </div>
+                        </div>
+                        <!--
                         <div class="col-xs-6" id="s_client_d">
                             <div class='input-group' id='s_client_w'>
                                 <input id="s_client" type='text' class="form-control" placeholder="Nombre de cliente." />
@@ -101,6 +117,7 @@
                                 <i class="fa fa-search"></i> Consultar
                             </button> 
                         </div>
+                        -->
                     </div>
 
                     <!-- Clients table -->

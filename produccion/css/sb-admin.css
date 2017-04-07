@@ -9,6 +9,8 @@
 body {
     margin-top: 100px;
     background-color: #222;
+    background-image: url(../img/pattern1.gif);
+    background-size: 150px;
 }
 
 @media(min-width:768px) {
@@ -225,4 +227,17 @@ ul.alert-dropdown {
 
 .panel-yellow > a:hover {
     color: #df8a13;
+}
+.logo{
+    width:150px;
+    margin: 30px auto;
+}
+.wrapper-login{
+    padding:0 !important;
+    max-width: 420px;
+    margin: 0 auto;
+}
+.wrapper-login #page-wrapper{
+    border-radius: 9px;
+    box-shadow: 0 0 10px black;
 }

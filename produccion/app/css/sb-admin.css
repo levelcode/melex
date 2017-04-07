@@ -9,11 +9,18 @@
 body {
     margin-top: 0px;
     background-color: #222;
+    background-image: url(../img/pattern1.gif);
+    background-size: 150px;
 }
 
 @media(min-width:1360px) {
     body {
         margin-top: 0px;
+    }
+}
+@media (min-width: 768px){
+    body {
+        margin-top: 50px;
     }
 }
 
@@ -113,10 +120,14 @@ ul.alert-dropdown {
 
 /* Side Navigation */
 
+.navbar-nav {
+    margin: 7.5px 26px;
+}
+
 @media(min-width:1360px) {
     .side-nav {
         position: fixed;
-        top: 51px;
+        top: 81px;
         left: 225px;
         width: 225px;
         margin-left: -225px;
@@ -137,6 +148,8 @@ ul.alert-dropdown {
     .side-nav li a:focus {
         outline: none;
         background-color: #000 !important;
+    }
+    .navbar-nav {
     }
 }
 
@@ -225,4 +238,17 @@ ul.alert-dropdown {
 
 .panel-yellow > a:hover {
     color: #df8a13;
+}
+.logo{
+    width:150px;
+    margin: 30px auto;
+}
+.wrapper-login{
+    padding:0 !important;
+    max-width: 480px;
+    margin: 0 auto;
+}
+.wrapper-login #page-wrapper{
+    border-radius: 9px;
+    box-shadow: 0 0 10px black;
 }
