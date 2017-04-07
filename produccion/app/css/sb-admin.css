@@ -20,7 +20,7 @@ body {
 }
 @media (min-width: 768px){
     body {
-        margin-top: 50px;
+        
     }
 }
 
@@ -33,6 +33,7 @@ body {
     width: 100%;
     padding: 0;
     background-color: #fff;
+    padding-bottom: 70px;
 }
 
 .huge {
@@ -127,14 +128,14 @@ ul.alert-dropdown {
 @media(min-width:1360px) {
     .side-nav {
         position: fixed;
-        top: 81px;
+        top: 110px;
         left: 225px;
         width: 225px;
         margin-left: -225px;
         border: none;
         border-radius: 0;
         overflow-y: auto;
-        background-color: #222;
+        background-color: rgba(0, 0, 0, 0.57);
         bottom: 0;
         overflow-x: hidden;
         padding-bottom: 40px;

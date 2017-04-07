@@ -7,26 +7,33 @@
 /* Global Styles */
 
 body {
-    margin-top: 100px;
+    margin-top: 0px;
     background-color: #222;
     background-image: url(../img/pattern1.gif);
     background-size: 150px;
 }
 
-@media(min-width:768px) {
+@media(min-width:1360px) {
     body {
-        margin-top: 50px;
+        margin-top: 0px;
+    }
+}
+@media (min-width: 768px){
+    body {
+        
     }
 }
 
 #wrapper {
     padding-left: 0;
+    padding-top: 74px;
 }
 
 #page-wrapper {
     width: 100%;
     padding: 0;
     background-color: #fff;
+    padding-bottom: 70px;
 }
 
 .huge {
@@ -34,10 +41,9 @@ body {
     line-height: normal;
 }
 
-@media(min-width:768px) {
+@media(min-width:1360px) {
     #wrapper {
         padding-left: 225px;
-        padding-right: 5px;
     }
 
     #page-wrapper {
@@ -115,17 +121,21 @@ ul.alert-dropdown {
 
 /* Side Navigation */
 
-@media(min-width:768px) {
+.navbar-nav {
+    margin: 7.5px 0px;
+}
+
+@media(min-width:1360px) {
     .side-nav {
         position: fixed;
-        top: 51px;
+        top: 110px;
         left: 225px;
         width: 225px;
         margin-left: -225px;
         border: none;
         border-radius: 0;
         overflow-y: auto;
-        background-color: #222;
+        background-color: rgba(0, 0, 0, 0.57);
         bottom: 0;
         overflow-x: hidden;
         padding-bottom: 40px;
@@ -139,6 +149,8 @@ ul.alert-dropdown {
     .side-nav li a:focus {
         outline: none;
         background-color: #000 !important;
+    }
+    .navbar-nav {
     }
 }
 
@@ -234,7 +246,7 @@ ul.alert-dropdown {
 }
 .wrapper-login{
     padding:0 !important;
-    max-width: 420px;
+    max-width: 480px;
     margin: 0 auto;
 }
 .wrapper-login #page-wrapper{
