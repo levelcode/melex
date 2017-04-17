@@ -34,10 +34,19 @@ function loadMenu(){
         		m_tid=data[i].id;
         		m_tn=data[i].name;
         		m_tp=data[i].publico;
+
+        		m_ti=data[i].icono;
         		if(m_tid == tid){
         			$(".page-header h1").text(m_tp);
         		}
-        		$("#menu").append("<li><a href='pages.html?tid="+m_tid+"'><i class='fa fa-table'></i> "+m_tp+"</a></li>");
+
+        		//$("#menu").append("<li><a href='pages.html?tid="+m_tid+"'> "+m_tp+"</a></li>");
+        		if(m_ti == "NULL" || m_ti == "null" || m_ti == null)
+        			m_ti="icon_network.png";
+        		var page_link="<li><a href='pages.html?tid="+m_tid+"'><img class='t_icon' src='http://melexa.info/app_melexa/img/icons/"+m_ti+"'> "+m_tp+"</a></li>";
+
+        		$("#menu").append(page_link);
+
         	}
            	loadTimeHeaders();
         }
@@ -96,6 +105,7 @@ function loadContent(){
 
 						}else{
 							$(".pags").show();
+							page = parseInt(page);
 							if( (page+1)*50>total){
 								$(".next_page").hide();		
 							}
@@ -275,7 +285,7 @@ $(document).ready(function() {
 
 		state =1;
 
-		// $("#headinguname").text(u_name);
+		$("#headinguname").text(u_name);
 		$("#headingcname").text(c_name);
 
 		loadMenu();

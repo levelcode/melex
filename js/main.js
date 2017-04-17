@@ -130,7 +130,9 @@ function loadContent(){
 							c_name=d[i].nombre1+" "+d[i].nombre2;
 							$("#clients_table").append("<a href='cliente.html?cid="+c_id+"' class='list-group-item'>"+c_id+" - "+c_name+"</a>");
 						}			
-						if( (page+1)*50>total_clients){
+						page = parseInt(page);
+						if( (page+1)>Math.ceil(total_clients/50-1)	){
+							console.log(page+" y "+total_clients);
 							$(".next_clients").hide();		
 						}
 						if(page==0)
@@ -211,7 +213,7 @@ $(document).ready(function() {
 				$("#back_bt").hide();
 			}else{
 				$("#back_bt").show();
-				console.log("showing bt");
+				//console.log("showing bt");
 			}
 			localStorage.setItem("back_h",JSON.stringify(back_h) );
 		}

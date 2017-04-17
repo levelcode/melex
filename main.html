@@ -42,15 +42,24 @@
                 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                        <button id="back_bt" type="button" class="navbar-back"><i class="fa fa-chevron-left"></i></button>
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <div class="navbar-brand">
-                            <a  href="index.html">MELEXA</a>
+                        <div class="col-xs-4">
+                            <a  href="index.html"><img class="logo-nav xs-hidden" src="img/logo.jpg" alt=""></a>
+                        </div>
+                        <div class="col-xs-4">
+                            <h1>Clientes</h1>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="row">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="row">
+                                <div class="headingname" >Usuario: <span id="headinguname"></span></div>
+                            </div>
                         </div>
                     </div>
                     
@@ -68,15 +77,22 @@
 
                 <!-- Begin page content -->
                 <div class="container-fluid">
-                    <div class="headingname" >Usuario: <span id="headinguname"></span></div> 
                     
                     <div class="page-header text-center">
-                        <h1>Clientes</h1>
+                        <h1></h1>
                     </div>
 
 
                     <!-- id CLient search -->
                     <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group input-group">
+                                <input type="text" class="form-control" id="s_clientid" placeholder="ID de cliente.">
+                                <span class="input-group-btn"><button class="btn btn-default" type="button" id="bt_search_idclient"><i class="fa fa-search"></i> Consultar</button></span>
+                            </div>
+                        </div>
+
+                        <!--
                         <div class="col-xs-6" id="s_client_id">
                             <div class='input-group' id='s_client_id'>
                                 <input id="s_clientid" type='text' class="form-control" placeholder="id de cliente." />
@@ -87,10 +103,18 @@
                                 <i class="fa fa-search"></i> Consultar
                             </button> 
                         </div>
+                        -->
                     </div>
 
                     <!-- Autocomplete search -->
                     <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group input-group">
+                                <input type="text" class="form-control" id="s_client" placeholder="Nombre de cliente.">
+                                <span class="input-group-btn"><button class="btn btn-default" type="button" id="bt_search"><i class="fa fa-search"></i> Consultar</button></span>
+                            </div>
+                        </div>
+                        <!--
                         <div class="col-xs-6" id="s_client_d">
                             <div class='input-group' id='s_client_w'>
                                 <input id="s_client" type='text' class="form-control" placeholder="Nombre de cliente." />
@@ -101,6 +125,7 @@
                                 <i class="fa fa-search"></i> Consultar
                             </button> 
                         </div>
+                        -->
                     </div>
 
                     <!-- Clients table -->
@@ -114,13 +139,17 @@
                             
                         </div>
                     </div>
-                    <div class="md-12 pags" style="min-height: 3em;">
+                    <div class="md-12 pags" style="min-height: 8em;">
                         <button class="pag_bt prev_clients"><i class="fa fa-long-arrow-left"></i> Anterior</button>
                         <button class="pag_bt next_clients pull-right">Siguiente <i class="fa fa-long-arrow-right"></i></button>
                         <div class="text-center page-data"></div>
                     </div>
                 </div>
-
+                <nav class="footer">
+                    <div class="footer-fixed">
+                        <button id="back_bt" type="button" class="navbar-back"><i class="fa fa-chevron-left"></i></button>
+                    </div>  
+                </nav>
                 
         </div>
         <!-- /#page-wrapper -->

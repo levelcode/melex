@@ -48,7 +48,8 @@
                             <span class="icon-bar"></span>
                         </button>
                         <div class="navbar-brand">
-                            <a  href="index.html">MELEXA</a>
+                            <div class="headingname" >Usuario: <span id="headinguname"></span></div>
+                            <a  href="index.html"><img class="logo-nav xs-hidden" src="img/logo.jpg" alt=""></a>
                         </div>
                     </div>
                     
@@ -65,32 +66,31 @@
 
                 <!-- Begin page content -->
                 <div class="container-fluid">
-                    
-                    <div class="headingname" >Usuario: <span id="headinguname"></span></div> 
+                
                     
                     <div class="page-header text-center">
                         <h1>Cuenta de usuario</h1>
                     </div>
-
-                    <hr>
                     <div class="row text-left">
-                        <h2>Cambio de Clave:</h2>
+                        <h2>Cambio de Clave</h2>
                     </div>
                     <div class="row text-center">
-                        <div class="col-xs-8 text-left">
-                            <label for="new_pass">Nueva Clave:</label>
+                        <div class="col-lg-12">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">Nueva Clave</span>
+                                <input type="password" class="form-control" id="new_pass" name="new_pass" placeholder="Ingrese su nueva clave">
+                            </div>
                         </div>
-                        <div class="col-xs-12">
-                            <input type="password" id="new_pass" name="new_pass">
-                        </div>
+
                     </div>
                     <div class="row text-center">
-                        <div class="col-xs-8 text-left">
-                            <label for="confirm_pass">Confirmar Clave:</label>
+                        <div class="col-lg-12">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">Confirmar Clave</span>
+                                <input type="password" class="form-control" id="confirm_pass" name="confirm_pass" placeholder="Ingrese su nueva clave ">
+                            </div>
                         </div>
-                        <div class="col-xs-12">
-                            <input type="password" id="confirm_pass" name="confirm_pass">
-                        </div>
+                        
                     </div>
                     <div class="row text-center">
                         <button id="bt_continue">Continuar</button>
@@ -99,7 +99,11 @@
                         <small class="msg_process" id="msg_info"></small>
                     </div>
                 </div>
-
+                <nav class="footer">
+                    <div class="footer-fixed">
+                        <button id="back_bt" type="button" class="navbar-back"><i class="fa fa-chevron-left"></i></button>
+                    </div>  
+                </nav>
                 
 
                 
