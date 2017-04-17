@@ -37,7 +37,7 @@ function loadMenu(){
 
         		m_ti=data[i].icono;
         		if(m_tid == tid){
-        			$(".page-header h1").text(m_tp);
+        			$("#table_name").text(m_tp);
         		}
 
         		//$("#menu").append("<li><a href='pages.html?tid="+m_tid+"'> "+m_tp+"</a></li>");

@@ -67,7 +67,7 @@ function loadContent(){
 
 			for(i=0;i<lista.length;i++){
 				c_id=lista[i].cliente;
-				c_name=lista[i].nombre1+" "+lista[i].nombre2;
+				c_name=c_id+" - "+lista[i].nombre1+" "+lista[i].nombre2;
 				localStorage.setItem("cname",c_name);
 				c_direccion1 =  lista[i].direccion1;
 				c_direccion2 =  lista[i].direccion2;
