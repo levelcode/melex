@@ -36,57 +36,10 @@ function loadMenu(){
 
     },"json");
 }
-function loadExpert(){
-	$.post(urlA,{action:"get_expert",cid:c_id},function(d){
-		var resp=$.parseJSON(d);
-		if(resp.msg == "error"){
-				alert("Error de conexión: 1. "+i_resp.detail);
-		}else{
-			state=0;
-			for(i=0;i<resp.length;i++){
-				var row="<tr>";
-				resp[i].forEach(function(item){
-					if(i==0)
-						row+="<th>"+item+"</th>";
-					else
-						row+="<td>"+item+"</td>";
-				});
-				row+="</tr>";
-				$("#tbody").append(row);
-			}
-		}
-	});
-	loadMenu();
-}
-function loadContent(){
-	$.post(urlA,{action:"get_clients_by_params",cid:c_id},function(d){
-		if(d.msg == "error"){
-			alert("Error de conexión.");
-		}else{
-			lista=$.parseJSON(d);
 
-			for(i=0;i<lista.length;i++){
-				c_id=lista[i].cliente;
-				c_name=c_id+" - "+lista[i].nombre1+" "+lista[i].nombre2;
-				localStorage.setItem("cname",c_name);
-				c_direccion1 =  lista[i].direccion1;
-				c_direccion2 =  lista[i].direccion2;
-				c_ciudad	 = 	lista[i].ciudad;
-				c_telefono1 	 = 	lista[i].telefono1;
-				c_telefono2 	 = 	lista[i].telefono2;
-				c_nit 		= lista[i].nit;
-				$("#cnombre").val(c_name);
-				$("#cnit").val(c_nit);
-				$("#cdireccion1").val(c_direccion1);
-				$("#cdireccion2").val(c_direccion2);
-				$("#cciudad").val(c_ciudad);
-				$("#ctelefono1").val(c_telefono1);
-				$("#ctelefono2").val(c_telefono2);
-			}	
-			
-		}
-		loadExpert();		
-	});
+function loadContent(){
+	
+	loadMenu();	
 }
 
 
@@ -99,22 +52,12 @@ $(document).ready(function() {
 
 
 	var params = urlObject({url:window.location.href });
-	if(params.parameters.cid != undefined){
-		c_id = params.parameters.cid;
-		localStorage.setItem("cid",c_id);
-	}else{
-		if(localStorage.getItem("cid") != undefined )
-		c_id = localStorage.getItem("cid");
-	}
-	//console.log(params);
-	if( !validateLS(token,u_id,u_name) || c_id == undefined ){
+
+	if( !validateLS(token,u_id,u_name)	){
 		window.location.replace("index.html");
 	}else{
 		
-		if(localStorage.getItem("page")!= undefined)
-			page = localStorage.getItem("page");
-
-
+		
 		$("#back_bt").hide();
 		if(	localStorage.getItem("back_h") != undefined){
 			var dh=localStorage.getItem("back_h");
@@ -127,11 +70,11 @@ $(document).ready(function() {
 						c_id = back_h[back_h.length-1].cid;
 					back_h.pop();
 				}else{
-					back_h.push({url:"cliente.html",cid:c_id});
+					back_h.push({url:"pricing.html"});
 				}
 			}else{
 				localStorage.setItem("back_tag","false");
-				back_h.push({url:"cliente.html",cid:c_id});
+				back_h.push({url:"pricing.html"});
 			}
 			
 			if(back_h.length < 2){
@@ -142,10 +85,6 @@ $(document).ready(function() {
 			}
 			localStorage.setItem("back_h",JSON.stringify(back_h) );
 		}
-
-
-
-
 
 		state = 1;
 
@@ -176,5 +115,16 @@ $(document).ready(function() {
 		back_h.pop();
 		localStorage.setItem("back_h",JSON.stringify(back_h) );
 		window.location.replace(back_h[back_h.length-1].url);
+	});
+
+	$("#row_family").hide();
+	$(".titem").change(function(){
+		$("#row_family").hide();
+		$("#row_product").hide();
+		if($(this).val()=="Producto"){
+			$("#row_product").show();
+		}else{
+			$("#row_family").show();
+		}
 	});
 });

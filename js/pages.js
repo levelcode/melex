@@ -317,7 +317,12 @@ $(document).ready(function() {
 			window.location.replace("cuenta.html");
 		});
 		$("#bt_clientes").click(function(){
+			localStorage.setItem("page",0);
 			window.location.replace("main.html");
+		});
+		$("#bt_pricing").click(function(){
+			localStorage.setItem("page",0);
+			window.location.replace("pricing.html");
 		});
 
 		$("#bt_salir").click(function(){
